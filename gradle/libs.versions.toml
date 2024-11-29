@@ -1,0 +1,30 @@
+# gradle/libs.versions.toml
+[versions]
+kotlin = "2.1.0"
+ktor = "3.0.1"
+exposed = "0.56.0"
+h2 = "2.3.232"
+logback = "1.4.14"
+
+[libraries]
+kotlin-stdlib = { module = "org.jetbrains.kotlin:kotlin-stdlib", version.ref = "kotlin" }
+ktor-server-core = { module = "io.ktor:ktor-server-core-jvm", version.ref = "ktor" }
+ktor-server-request-validation = { module = "io.ktor:ktor-server-request-validation", version.ref = "ktor" }
+ktor-server-content-negotiation = { module = "io.ktor:ktor-server-content-negotiation-jvm", version.ref = "ktor" }
+ktor-serialization-kotlinx-json = { module = "io.ktor:ktor-serialization-kotlinx-json-jvm", version.ref = "ktor" }
+ktor-server-netty = { module = "io.ktor:ktor-server-netty-jvm", version.ref = "ktor" }
+ktor-server-config-yaml = { module = "io.ktor:ktor-server-config-yaml-jvm", version.ref = "ktor" }
+ktor-server-test-host = { module = "io.ktor:ktor-server-test-host-jvm", version.ref = "ktor" }
+exposed-core = { module = "org.jetbrains.exposed:exposed-core", version.ref = "exposed" }
+exposed-jdbc = { module = "org.jetbrains.exposed:exposed-jdbc", version.ref = "exposed" }
+logback-classic = { module = "ch.qos.logback:logback-classic", version.ref = "logback" }
+h2 = { module = "com.h2database:h2", version.ref = "h2" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit", version.ref = "kotlin" }
+
+[bundles]
+ktor = ["ktor-server-core", "ktor-server-request-validation", "ktor-server-content-negotiation", "ktor-serialization-kotlinx-json", "ktor-server-netty", "ktor-server-config-yaml"]
+exposed = ["exposed-core", "exposed-jdbc"]
+
+[plugins]
+ktor = { id = "io.ktor.plugin", version.ref = "ktor" }
+kotlin-serialization = { id = "org.jetbrains.kotlin.plugin.serialization", version.ref = "kotlin" }
